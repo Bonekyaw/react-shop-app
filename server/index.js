@@ -31,6 +31,7 @@ app.use('/api/product', require('./routes/product'));
 
 //use this to show the image you have in node js server to client (react js)
 //https://stackoverflow.com/questions/48914987/send-image-path-from-node-js-express-server-to-react-client
+//To create a virtual path prefix (where the path does not actually exist in the file system) for files
 app.use('/uploads', express.static('uploads'));
 
 // Serve static assets if in production
