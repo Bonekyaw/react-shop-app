@@ -158,20 +158,15 @@ router.get('/userCartInfo', auth, (req, res) => {
                 return item.id
             })
 
-
             Product.find({ '_id': { $in: array } })
                 .populate('writer')
                 .exec((err, cartDetail) => {
                     if (err) return res.status(400).send(err);
                     return res.status(200).json({ success: true, cartDetail, cart })
                 })
-
         }
     )
 })
-
-
-
 
 router.post('/successBuy', auth, (req, res) => {
     let history = [];
@@ -245,12 +240,10 @@ router.post('/successBuy', auth, (req, res) => {
                         cartDetail: []
                     })
                 })
-
             })
         }
     )
 })
-
 
 router.get('/getHistory', auth, (req, res) => {
     User.findOne(
@@ -262,6 +255,5 @@ router.get('/getHistory', auth, (req, res) => {
         }
     )
 })
-
 
 module.exports = router;
