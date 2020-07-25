@@ -68,7 +68,6 @@ export function getCartItems(cartItems, userCart) {
     const request = axios.get(`/api/product/products_by_id?id=${cartItems}&type=array`)
         .then(response => {
 
-
             //Make CartDetail inside Redux Store 
             // We need to add quantity data to Product Information that come from Product Collection. 
 
@@ -87,9 +86,6 @@ export function getCartItems(cartItems, userCart) {
         payload: request
     }
 }
-
-
-
 
 export function removeCartItem(id) {
     const request = axios.get(`/api/users/removeFromCart?_id=${id}`)
@@ -110,7 +106,6 @@ export function removeCartItem(id) {
         payload: request
     }
 }
-
 
 export function onSuccessBuy(data) {
     return {
